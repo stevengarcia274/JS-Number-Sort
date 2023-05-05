@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Numeric Sort</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./numSort.js"></script>
+  </head>
+  <body>
+    <h1>array number sort</h1>
+
+    <form action="#">
+      <input
+        type="text"
+        placeholder="Enter array"
+        class="text-input"
+        id="text-demo1"
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        onclick="visualizeArr(document.getElementById('text-demo1').value)"
+      >
+        Enter
+      </button>
+      <button type="button" onclick="clearInput()">Clear</button>
+    </form>
+    <div id="insert-here"></div>
+    <button
+      type="button"
+      onclick="arrSort(document.getElementById('text-demo1').value)"
+    >
+      Sort
+    </button>
+
+    <script>
+      let sampleArr = [6, 60, 2, 5, 98, 34];
+      console.log("sammpleArr with just .sort() [" + sampleArr.sort() + "]");
+
+      for (let i = 0; i < sampleArr.length - 1; i++) {
+        for (let t = i + 1; t < sampleArr.length; t++) {
+          if (sampleArr[i] > sampleArr[t]) {
+            let temp = sampleArr[i];
+            sampleArr[i] = sampleArr[t];
+            sampleArr[t] = temp;
+          }
+        }
+      }
+
+      console.log("sampleArr with sorting for loop [" + sampleArr + "]");
+    </script>
+  </body>
+</html>
