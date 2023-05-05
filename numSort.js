@@ -28,13 +28,7 @@ function clearInput(){
 function arrSort(inputToSrt){
    let sortedArr = inputToSrt.split(" ").filter(Boolean);
    document.getElementById("insert-here").innerHTML = arrItemsDisplay(sortedArr.sort(function (a, b){
-      if (a < b){
-         return -1;
-      }
-      if (b < a){
-         return 1;
-      }
-      return 0;
+      return a -b;
    }));
 }
 
